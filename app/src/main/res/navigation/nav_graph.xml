@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.vtpsales.vtpsales.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_serviceCentersFragment"
+            app:destination="@id/serviceCentersFragment" />
+        <action android:id="@+id/action_loginFragment_to_fillServiceCenterFragment"
+            app:destination="@+id/fillServiceCenterFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/serviceCentersFragment"
+        android:name="com.vtpsales.vtpsales.ui.servicecenterlist.ServiceCentersFragment"
+        android:label="Service Center List"
+        tools:layout="@layout/service_centers_fragment" >
+        <action android:id="@+id/action_serviceCentersFragment_to_ServiceCenterDetailsFragment"
+            app:destination="@+id/serviceCenterDetailsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/serviceCenterDetailsFragment"
+        tools:layout="@layout/service_center_details_fragment"
+        android:name="com.vtpsales.vtpsales.ui.servicecenterdetails.ServiceCenterDetailsFragment"
+        android:label="Service Center Details Fragment"/>
+
+    <fragment android:id="@+id/fillServiceCenterFragment"
+        android:name="com.vtpsales.vtpsales.ui.fillservicecenter.FillServiceCenterFragment"
+        android:label="Fill Service Center Fragment"
+        tools:layout="@layout/fill_service_center_fragment"/>
+
+</navigation>
